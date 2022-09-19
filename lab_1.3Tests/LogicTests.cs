@@ -14,34 +14,18 @@ namespace FirstApplication.Tests
         [TestMethod()]
         public void sortTest3Words()
         {
+
+            string yourSentence = Logic.Sort("n nn nnn");
+            Assert.AreEqual("nnn nn n", yourSentence);
             
-            string yourSentence = "n nn nnn";
-            string[] checkArray = { "nnn", "nn", "n" };
-            
-
-            string [] outArray = Logic.Sort(yourSentence);
-                
-            Assert.AreEqual(checkArray[0], outArray[0]);
-            Assert.AreEqual(checkArray[1], outArray[1]);
-            Assert.AreEqual(checkArray[2], outArray[2]);
-
-
         }
 
         [TestMethod()]
         public void sortTest4Words()
         {
 
-            string yourSentence = "n nnnn nnn nn";
-            string[] checkArray = { "nnnn", "nnn", "nn", "n" };
-
-
-            string[] outArray = Logic.Sort(yourSentence);
-
-            Assert.AreEqual(checkArray[0], outArray[0]);
-            Assert.AreEqual(checkArray[1], outArray[1]);
-            Assert.AreEqual(checkArray[2], outArray[2]);
-            Assert.AreEqual(checkArray[3], outArray[3]);
+            string yourSentence = Logic.Sort("n nn nnnn nnn");
+            Assert.AreEqual("nnnn nnn nn n", yourSentence);
 
 
         }
@@ -50,18 +34,8 @@ namespace FirstApplication.Tests
         public void sortTest5Words()
         {
 
-            string yourSentence = "n nnnn nnn nn nnnnn";
-            string[] checkArray = { "nnnnn", "nnnn", "nnn", "nn", "n" };
-
-
-            string[] outArray = Logic.Sort(yourSentence);
-
-            Assert.AreEqual(checkArray[0], outArray[0]);
-            Assert.AreEqual(checkArray[1], outArray[1]);
-            Assert.AreEqual(checkArray[2], outArray[2]);
-            Assert.AreEqual(checkArray[3], outArray[3]);
-            Assert.AreEqual(checkArray[4], outArray[4]);
-
+            string yourSentence = Logic.Sort("nnnnnnnnnnnnnnnnnn n nn nnnn nnn");
+            Assert.AreEqual("nnnnnnnnnnnnnnnnnn nnnn nnn nn n", yourSentence);
 
         }
     }
